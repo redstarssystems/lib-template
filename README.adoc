@@ -1,13 +1,14 @@
 == Library template for clj-new
 
-This template is based on clj-new can run common tasks (as Leiningen does):
-- build jar,
-- compile java sources,
-- create pom,
-- sign jar file
-- local install to .m2
-- deploy jar to clojars
-- run tests using kaocha
+This template is based on clj-new can run common tasks (as Leiningen):
+
+* build jar,
+* compile java sources,
+* create pom,
+* sign jar file
+* local install to .m2
+* deploy jar to clojars
+* run tests using kaocha
 
 See also https://github.com/redstarssystems/app-template.git for application template.
 
@@ -20,15 +21,13 @@ See also https://github.com/redstarssystems/app-template.git for application tem
 
 2. (optional) Clone this repo to your local folder (e.g. ~/projects/lib-template)
 
-3. Create new project from local template (step 2 is required):
-
+3. Create new project from local template (step 2 is required): 
 `$ clj -A:new ~/projects/lib-template::lib-template my.example/lib01`
 
-   or, create new project from Github template: 
-
+or, create new project from Github template: 
 `$ clj -A:new https://github.com/redstarssystems/lib-template.git my.example/lib01`
 
-4. Follow the README.adoc in root project folder
+4. Follow the README.adoc in root project folder.
 
 == License
 
