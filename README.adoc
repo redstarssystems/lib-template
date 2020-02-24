@@ -1,6 +1,6 @@
 == Library template for clj-new
 
-This template is based on clj-new can run common tasks (as Leiningen):
+This library template is based on clj-new can run common tasks (as Leiningen):
 
 * build jar,
 * compile java sources,
