@@ -16,7 +16,7 @@
                                       "-e" "(require,'[clojure.pprint,:refer,[pprint]])"
                                       "--main" "nrepl.cmdline"]}
 
-             :pbuilder {:extra-deps  {org.rssys/pbuilder {:mvn/version "0.1.3"}}
+             :pbuilder {:extra-deps  {org.rssys/pbuilder {:mvn/version "0.1.4"}}
                         :extra-paths ["resources"]
                         :jvm-opts    []
                         :main-opts   ["--main" "org.rssys.pbuilder.core"]}
