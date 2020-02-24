@@ -1,0 +1,37 @@
+== Library template for clj-new
+
+This template is based on clj-new can run common tasks (as Leiningen does):
+- build jar,
+- compile java sources,
+- create pom,
+- sign jar file
+- local install to .m2
+- deploy jar to clojars
+- run tests using kaocha
+
+See also https://github.com/redstarssystems/app-template.git for application template.
+
+**Warning**: tested on Mac & linux.
+
+== Usage
+
+1. Install latest clj-new (0.8.6+) from https://github.com/seancorfield/clj-new as :new alias to ~/.clojure/deps.edn.
+(clj-new 0.8.5 and lower may have errors very rarely.)
+
+2. (optional) Clone this repo to your local folder (e.g. ~/projects/lib-template)
+
+3. Create new project from local template (step 2 is required):
+
+`$ clj -A:new ~/projects/lib-template::lib-template my.example/lib01`
+
+   or, create new project from Github template: 
+
+`$ clj -A:new https://github.com/redstarssystems/lib-template.git my.example/lib01`
+
+4. Follow the README.adoc in root project folder
+
+== License
+
+Copyright © 2020 Mike Ananev
+
+Distributed under the Eclipse Public License 2.0 or (at your option) any later version.
