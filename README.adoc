@@ -22,10 +22,8 @@ See also https://github.com/redstarssystems/app-template.git for application tem
 2. (optional) Clone this repo to your local folder (e.g. ~/projects/lib-template)
 
 3. Create new project from local template (step 2 is required): 
-`$ clj -A:new ~/projects/lib-template::lib-template my.example/lib01`
-
-or, create new project from Github template: 
-`$ clj -A:new https://github.com/redstarssystems/lib-template.git my.example/lib01`
+`$ clj -A:new ~/projects/lib-template::lib-template my.example/lib01` or, create new project from Github template: 
+`$ clj -A:new https://github.com/redstarssystems/lib-template.git@0cf9dd70d31d0fef45dfc687a6ebc97e366b5f0a my.example/lib01`
 
 4. Follow the README.adoc in root project folder.
 
