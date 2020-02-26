@@ -9,19 +9,18 @@
  :aliases   {
              :repl     {:extra-deps  {nrepl                {:mvn/version "0.6.0"}
                                       healthsamurai/matcho {:mvn/version "0.3.3"}
+                                      clj-deps             {:mvn/version "0.4.10"}
                                       hashp                {:mvn/version "0.1.1"}}
                         :jvm-opts    []
                         :extra-paths ["dev/src" "resources" "test"]
-                        :main-opts   ["-e" "(require,'[hashp.core])"
-                                      "-e" "(require,'[clojure.pprint,:refer,[pprint]])"
-                                      "--main" "nrepl.cmdline"]}
+                        :main-opts   ["--main" "nrepl.cmdline"]}
 
              :pbuilder {:extra-deps  {org.rssys/pbuilder {:mvn/version "0.1.4"}}
                         :extra-paths ["resources"]
                         :jvm-opts    []
                         :main-opts   ["--main" "org.rssys.pbuilder.core"]}
 
-             :test     {:extra-deps  {lambdaisland/kaocha           {:mvn/version "0.0-573"}
+             :test     {:extra-deps  {lambdaisland/kaocha           {:mvn/version "0.0-590"}
                                       lambdaisland/kaocha-cloverage {:mvn/version "0.0-41"}
                                       healthsamurai/matcho          {:mvn/version "0.3.3"}}
                         :extra-paths ["resources" "test" "test/resources"]

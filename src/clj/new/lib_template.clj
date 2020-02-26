@@ -15,6 +15,7 @@
       ["test/{{nested-dirs}}/core_test.clj" (render "test/core_test.clj" data)]
       [".editorconfig" (render ".editorconfig" data)]
       [".env" (render ".env" data)]
+      [".envrc" (render ".envrc" data)]
       [".gitignore" (render ".gitignore" data)]
       ["CHANGELOG.adoc" (render "CHANGELOG.adoc" data)]
       ["deps.edn" (render "deps.edn" data)]
