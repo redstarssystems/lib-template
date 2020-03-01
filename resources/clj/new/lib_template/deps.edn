@@ -9,9 +9,7 @@
  :aliases   {
              :repl     {:extra-deps  {nrepl                {:mvn/version "0.6.0"}
                                       healthsamurai/matcho {:mvn/version "0.3.3"}
-                                      clj-deps             {:mvn/version "0.4.10"}
                                       hashp                {:mvn/version "0.1.1"}}
-                        :jvm-opts    []
                         :extra-paths ["dev/src" "resources" "test"]
                         :main-opts   ["--main" "nrepl.cmdline"]}
 
