@@ -4,7 +4,7 @@ CURRENT_TIME = $(shell date)
 
 .EXPORT_ALL_VARIABLES:
 
-.PHONY:	clean repl run javac jar install deploy conflicts release bump test help
+.PHONY:	clean repl run javac build install deploy conflicts release bump test help
 
 YELLOW_PRINT = \033[0;33m
 GREEN_PRINT = \033[0;92m
@@ -40,7 +40,7 @@ compile: ## Compile Clojure code
 	$(call cecho,"Compile clojure code")
 	@clojure -A:pbuilder compile
 
-jar: ## Build jar file (library)
+build: ## Build jar file (library)
 	$(call cecho,"Build jar file (library)")
 	@clojure -A:pbuilder jar
 
