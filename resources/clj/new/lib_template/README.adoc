@@ -4,7 +4,8 @@ Project {{name}} generated from library template https://github.com/redstarssyst
 
 == Building project
 
-To build project run `clojure -A:pbuilder <command>` or run `make <command>`.
+Easiest way to build project is to use Makefile (make utility). Run `make help` for additional info.
+To build project using tools.deps run `clojure -A:pbuilder <command>`.
 List of available commands:
 
 * clean         - clear target folder
