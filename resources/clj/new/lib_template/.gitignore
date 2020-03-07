@@ -6,10 +6,11 @@ logs
 .clj-kondo/*
 !*.clj-kondo/config.edn
 
+# exclude all .idea except some subfolders
 .idea/*
-!*.idea/clojure-deps.xml
-!*.idea/codeStyles/codeStyleConfig.xml
-!*.idea/codeStyles/Project.xml
+!.idea/clojure-deps.xml
+!.idea/codeStyles/
+!.idea/copyright/
 
 
 # standard (default)
