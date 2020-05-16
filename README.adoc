@@ -10,7 +10,9 @@ This library template is based on clj-new can run common tasks (as Leiningen):
 * deploy jar to clojars
 * run tests using kaocha
 
-See also https://github.com/redstarssystems/app-template.git for application template.
+See also:
+* https://github.com/redstarssystems/app-template[Application template]
+* https://github.com/redstarssystems/web-template[Web template]
 
 **Warning**: tested on Mac & linux.
 
