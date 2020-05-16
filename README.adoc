@@ -11,6 +11,7 @@ This library template is based on clj-new can run common tasks (as Leiningen):
 * run tests using kaocha
 
 See also:
+
 * https://github.com/redstarssystems/app-template[Application template]
 * https://github.com/redstarssystems/web-template[Web template]
 
