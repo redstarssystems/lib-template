@@ -1,4 +1,5 @@
 {
+ ;;;; uncomment this if you need to work with java sources
  ;;:java-src-folder "java-src"
  ;;:javac-options     ["-target" "1.8" "-source" "1.8" "-Xlint:-options"]
 
@@ -9,9 +10,17 @@
  :deploy-creds                :m2-settings                  ;; :m2-settings or :password-prompt
 
  :target-folder               "target"
+
  :group-id                    "{{group}}"
  :artifact-id                 "{{name}}"
  :artifact-version            "0.1.0-SNAPSHOT"
+
+ ;; OR
+
+ ;;:group-id                    #env GROUP_ID
+ ;;:artifact-id                 #env ARTIFACT_ID
+ ;;:artifact-version            #env ARTIFACT_VERSION
+
 
  :description                 "FIXME: Put your library description here"
  :url                         "FIXME: https://github.com/add-your-repo"
@@ -19,4 +28,15 @@
  :license                     {:name "EPL-2.0"
                                :url  "https://www.eclipse.org/legal/epl-2.0/"}
  ;;:manifest                    {"Multi-Release" "true"}    ;; here you may override MANIFEST.MF
+
+ ;;:distribution-management     {
+ ;;                              :repository {
+ ;;                                           :id  "releases"
+ ;;                                           :url "http://mycompany/nexus/content/repositories/releases"}
+ ;;                              :snapshot-repository
+ ;;                                          {
+ ;;                                           :id  "snapshots"
+ ;;                                           :url "http://mycompany/nexus/content/repositories/snapshots"
+ ;;                                           }
+ ;;                              }
  }

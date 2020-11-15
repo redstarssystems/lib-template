@@ -14,9 +14,11 @@
       ["src/{{nested-dirs}}/core.clj" (render "src/core.clj" data)]
       ["test/{{nested-dirs}}/core_test.clj" (render "test/core_test.clj" data)]
       [".editorconfig" (render ".editorconfig" data)]
-      [".env" (render ".env" data)]
+      [".env.public" (render ".env.public" data)]
+      [".env.private" (render ".env.private" data)]
       [".envrc" (render ".envrc" data)]
       [".gitignore" (render ".gitignore" data)]
+      [".cljstyle" (render ".cljstyle" data)]
       ["CHANGELOG.adoc" (render "CHANGELOG.adoc" data)]
       ["deps.edn" (render "deps.edn" data)]
       ["LICENSE" (render "LICENSE" data)]
@@ -24,5 +26,6 @@
       ["pbuild.edn" (render "pbuild.edn" data)]
       ["README.adoc" (render "README.adoc" data)]
       ["tests.edn" (render "tests.edn" data)]
+      ["version_prefix" (render "version_prefix" data)]
       )))
 

@@ -1,13 +1,19 @@
 == Library template for clj-new
 
-This library template is based on clj-new can run common tasks (as Leiningen):
+This library template based on `clj-new` helps to quick start new Clojure project using `clojure` tool.
 
-* build jar,
-* compile java sources,
-* create pom,
+It gives you configured: environment variables control, editor configuration, linter, formatter, tests.
+
+Adapted for Intellij IDEA, but can be used with any editor.
+
+Library template can perform following tasks:
+
+* build jar
+* compile java sources
+* create pom
 * sign jar file
 * local install to .m2
-* deploy jar to clojars
+* deploy jar to remote repo (eg. clojars, maven central, etc)
 * run tests using kaocha
 
 See also:
@@ -19,20 +25,27 @@ See also:
 
 == Usage
 
-1. Install latest clj-new (0.8.6+) from https://github.com/seancorfield/clj-new as :new alias to ~/.clojure/deps.edn.
+1. Install Clojure tools https://clojure.org/guides/getting_started
+
+[source,bash]
+----
+brew install clojure/tools/clojure
+----
+
+2. Install latest clj-new (0.8.6+) from https://github.com/seancorfield/clj-new as :new alias to ~/.clojure/deps.edn.
 (clj-new 0.8.5 and lower may have errors very rarely.)
 
-2. (optional) Clone this repo to your local folder (e.g. ~/projects/lib-template)
+3. (optional) Clone this repo to your local folder (e.g. ~/projects/lib-template)
 
-3. Create new project from local template (step 2 is required):
+4. Create new project from local template (step 3 is required):
 +
-`$ clj -A:new ~/projects/lib-template::lib-template my.example/lib01` 
+`$ clj -M:new ~/projects/lib-template::lib-template my.example/lib01` 
 +
 or, create new project from Github template: 
 +
-`$ clj -A:new https://github.com/redstarssystems/lib-template@a4bd67780232276f98628d34e5acc5ec4ef810cf my.example/lib01`
+`$ clj -M:new https://github.com/redstarssystems/lib-template@a4bd67780232276f98628d34e5acc5ec4ef810cf my.example/lib01`
 
-4. Follow the README.adoc in root project folder.
+5. See README.adoc in a root of created project folder.
 
 == License
 

@@ -20,52 +20,93 @@ endef
 
 .DEFAULT_GOAL := help
 
+
+####
+## Project variables
+####
+
+export OS = $(shell uname -a)
+export OS_NAME = $(shell uname -s | tr A-Z a-z)
+ifeq ($(OS_NAME), darwin)
+	TIMESTAMP = $(shell gdate --utc +%FT%T.%3NZ)
+endif
+ifeq ($(OS_NAME), linux)
+	TIMESTAMP = $(shell date --utc +%FT%T.%3NZ)
+endif
+
+export BUILD_TIMESTAMP=${TIMESTAMP}
+export PROJECT_ROOT_DIR=$(shell pwd)
+
+export LICENSE=$(shell cat LICENSE)
+
+requirements: ## Install requirement tools. MacOS only!
+	$(call cecho, "Install requirement tools")
+	@if [ $$OS_NAME = "darwin" ]; then \
+		brew install coreutils direnv jenv; \
+		brew cask install cljstyle; \
+		xattr -r -d com.apple.quarantine /usr/local/bin/cljstyle; \
+		echo "Don't forget about \`direnv\` hooks."; \
+	fi
+
+
 clean: ## Clean project
 	$(call cecho,"Clean project")
-	@clojure -A:pbuilder clean
+	@clojure -M:pbuilder clean
 
 repl: ## Run Clojure REPL
 	$(call cecho,"Run Clojure REPL")
-	@clojure -A:repl
+	@clojure -M:repl
 
 javac: ## Compile java classes
 	$(call cecho,"Compile java classes")
-	@clojure -A:pbuilder javac
-
-compile: ## Compile Clojure code
-	$(call cecho,"Compile clojure code")
-	@clojure -A:pbuilder compile
+	@clojure -M:pbuilder javac
 
 build: ## Build jar file (library)
 	$(call cecho,"Build jar file (library)")
-	@clojure -A:pbuilder jar
+	@clojure -M:pbuilder jar
 
 install: ## Install jar file to local .m2
 	$(call cecho,"Install jar file to local .m2")
-	@clojure -A:pbuilder install
-
-deploy: ## Deploy jar file to clojars
-	$(call cecho,"Deploy jar file to clojars")
-	@clojure -A:pbuilder deploy
+	@clojure -M:pbuilder install
 
 conflicts: ## Show class conflicts (if any)
 	$(call cecho,"Show class conflicts (if any)")
-	@clojure -A:pbuilder conflicts
+	@clojure -M:pbuilder conflicts
 
-release: ## Release artifact.
+outdated: ## Check outdated artifacts
+	$(call cecho,"Check outdated artifacts")
+	@clojure -M:outdated
+
+deploy: ## Deploy jar file to  remote repository
+	$(call cecho,"Deploy jar file to remote repository")
+	$(call cecho,"Not implemented yet")
+#	@clojure -M:pbuilder deploy
+
+release: ## Release artifact
 	$(call cecho,"Release artifact")
-	@clojure -A:pbuilder release
-
-bump: ## Bump version artifact in build file.
-	$(call cecho,"Bump version artifact in build file.")
-	@clojure -A:pbuilder bump $(filter-out $@,$(MAKECMDGOALS)) # parameter should be one of: major minor patch alpha beta rc qualifier
+	$(call cecho,"Not implemented yet")
+#	@clojure -M:pbuilder release
 
 test: ## Run tests
 	$(call cecho,"Run tests")
-	@clojure -A:test $(filter-out $@,$(MAKECMDGOALS)) # additional optional parameter may be :unit or :integration
+	@clojure -M:test $(filter-out $@,$(MAKECMDGOALS)) # additional optional parameter may be :unit or :integration
+
+bump: ## Bump version artifact in build file. Parameter should be one of: major, minor, patch, alpha, beta, rc
+	$(call cecho,"Bump version artifact in build file.")
+	@clojure -M:pbuilder bump $(filter-out $@,$(MAKECMDGOALS)) # parameter should be one of: major minor patch alpha beta rc qualifier
+
+format: ## Format source code
+	$(call cecho, "Format source code")
+	cljstyle fix
+
+lint: ## Lint source code
+	$(call cecho, "Lint source code")
+	clj-kondo --parallel --lint src:test/src:dev/src
+	cljstyle check
 
 help: ## Show help
 	 @grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
 
 # these lines need to work with command line params.
 %:

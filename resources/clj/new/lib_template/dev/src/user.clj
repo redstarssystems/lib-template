@@ -1,7 +1,5 @@
-(ns user)
-
-;; debug print with #p
-(require 'hashp.core)
+(ns user
+  (:require [hashp.core]))
 
 
 

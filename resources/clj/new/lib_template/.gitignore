@@ -34,4 +34,6 @@ pom.xml
 trace.edn
 .eastwood
 .nrepl-port
-.env
+.env.private
+!.env.public
+!.envrc

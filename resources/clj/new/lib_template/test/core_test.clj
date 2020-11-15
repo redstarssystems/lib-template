@@ -6,4 +6,5 @@
 
 (deftest ^:unit a-test
   (testing "simple test."
-    (is (= 1 1))))
+    (is (= 1 1))
+    (match {:a 1} {:a int?})))
