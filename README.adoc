@@ -43,7 +43,7 @@ brew install clojure/tools/clojure
 +
 or, create new project from Github template: 
 +
-`$ clj -M:new https://github.com/redstarssystems/lib-template@a4bd67780232276f98628d34e5acc5ec4ef810cf my.example/lib01`
+`$ clj -M:new https://github.com/redstarssystems/lib-template@08cb67e21cbbabd0930d45a237481822e02002e8 my.example/lib01`
 
 5. See README.adoc in a root of created project folder.
 
