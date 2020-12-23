@@ -25,27 +25,24 @@ See also:
 
 == Usage
 
-1. Install Clojure tools https://clojure.org/guides/getting_started
-
+Install Clojure tools https://clojure.org/guides/getting_started
 [source,bash]
 ----
-brew install clojure/tools/clojure
+    brew install clojure/tools/clojure
 ----
+1. Install latest clj-new (0.8.6+) from https://github.com/seancorfield/clj-new as :new alias to ~/.clojure/deps.edn.
 
-2. Install latest clj-new (0.8.6+) from https://github.com/seancorfield/clj-new as :new alias to ~/.clojure/deps.edn.
-(clj-new 0.8.5 and lower may have errors very rarely.)
+1. (optional) Clone this repo to your local folder (e.g. ~/projects/app-template)
 
-3. (optional) Clone this repo to your local folder (e.g. ~/projects/lib-template)
-
-4. Create new project from local template (step 3 is required):
-+
-`$ clj -M:new ~/projects/lib-template::lib-template my.example/lib01` 
-+
-or, create new project from Github template: 
+1. Create new project directly from Github template
 +
 `$ clj -M:new https://github.com/redstarssystems/lib-template@08cb67e21cbbabd0930d45a237481822e02002e8 my.example/lib01`
++
+or, create new project from local template (step 2 is required):
++
+`$ clj -M:new ~/projects/lib-template::lib-template my.example/lib01`
 
-5. See README.adoc in a root of created project folder.
+1. See README.adoc in a root of created project folder.
 
 == License
 
