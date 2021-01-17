@@ -30,17 +30,31 @@ Install Clojure tools https://clojure.org/guides/getting_started
 ----
     brew install clojure/tools/clojure
 ----
-1. Install latest clj-new (0.8.6+) from https://github.com/seancorfield/clj-new as :new alias to ~/.clojure/deps.edn.
+1. Install latest clj-new (0.8.6+) from https://github.com/seancorfield/clj-new as :clj-new alias to ~/.clojure/deps.edn.
+
+
+```
+{
+ :aliases {
+
+           :clj-new {:extra-deps {seancorfield/clj-new {:mvn/version "1.1.234"}}
+                     :main-opts  ["-m" "clj-new.create"]}
+           
+           }
+
+ }
+```
+
 
 1. (optional) Clone this repo to your local folder (e.g. ~/projects/app-template)
 
 1. Create new project directly from Github template
 +
-`$ clj -M:new https://github.com/redstarssystems/lib-template@08cb67e21cbbabd0930d45a237481822e02002e8 my.example/lib01`
+`$ clj -M:clj-new https://github.com/redstarssystems/lib-template@08cb67e21cbbabd0930d45a237481822e02002e8 my.example/lib01`
 +
 or, create new project from local template (step 2 is required):
 +
-`$ clj -M:new ~/projects/lib-template::lib-template my.example/lib01`
+`$ clj -M:clj-new ~/projects/lib-template::lib-template my.example/lib01`
 
 1. See README.adoc in a root of created project folder.
 
